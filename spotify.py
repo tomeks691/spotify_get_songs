@@ -82,6 +82,4 @@ if result.status_code != 204:
     if len(data) == 0:
         cursor.execute(f"INSERT INTO {table_name} VALUES (?, ?, ?)", (song_name, artist, sample))
         conn.commit()
-    else:
-        print(f"{artist}: {song_name}")
-        print("Znaleziono")
+
