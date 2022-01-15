@@ -76,7 +76,7 @@ if result.status_code != 204:
     song_name = get_name_song(songs)
     artist = get_name_artist(songs)
     sample = get_sample_link(songs)
-    cursor.execute("SELECT name_song FROM T2022_01_14 WHERE name_song = ? AND artist = ?",
+    cursor.execute(f"SELECT name_song FROM {table_name} WHERE name_song = ? AND artist = ?",
                    (song_name, artist))
     data = cursor.fetchall()
     if len(data) == 0:
