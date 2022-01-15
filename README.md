@@ -13,3 +13,4 @@ cookies.json
 .env
 client_id = "client_spotify_id"
 client_secret = "client_spotify_secret"
+token_access = "token_access_dropbox"
