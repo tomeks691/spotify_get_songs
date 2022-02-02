@@ -1,0 +1,5 @@
+.env
+cookies.json
+songs.db
+.idea/
+__pycache__/
