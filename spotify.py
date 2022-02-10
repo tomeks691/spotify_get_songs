@@ -1,13 +1,16 @@
-import requests
-import sqlite3
 import os
+import sqlite3
 from datetime import date
-from dotenv import load_dotenv, find_dotenv
 from datetime import datetime
+
+import requests
+from dotenv import load_dotenv, find_dotenv
+
 from spotify_token import get_code
 
 
 def get_name_artist(songs_from_spotify):
+    '''Get artist name'''
     for keys in songs_from_spotify.keys():
         if keys == "item":
             for key in songs_from_spotify[keys]:
@@ -18,6 +21,7 @@ def get_name_artist(songs_from_spotify):
 
 
 def get_name_song(songs_from_spotify):
+    '''Get song name'''
     for keys in songs_from_spotify.keys():
         if keys == "item":
             for key in songs_from_spotify[keys]:
@@ -26,6 +30,7 @@ def get_name_song(songs_from_spotify):
 
 
 def get_sample_link(songs_from_spotify):
+    '''Get link with sample of song'''
     for keys in songs_from_spotify.keys():
         if keys == "item":
             for key in songs_from_spotify[keys]:
@@ -34,6 +39,7 @@ def get_sample_link(songs_from_spotify):
 
 
 def get_token():
+    '''Get access token to login with spotify api'''
     load_dotenv(find_dotenv())
     AUTH_URL = 'https://accounts.spotify.com/api/token'
 
